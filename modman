@@ -1,0 +1,4 @@
+# base module
+app/etc/modules/Mitchvdl_QuoteCleanup.xml                           app/etc/modules/Mitchvdl_QuoteCleanup.xml
+app/code/community/Mitchvdl/QuoteCleanup                            app/code/community/Mitchvdl/QuoteCleanup
+

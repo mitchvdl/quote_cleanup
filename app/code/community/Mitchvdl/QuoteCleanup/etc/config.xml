@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Mitchvdl_QuoteCleanup>
+            <version>1.0.0</version>
+        </Mitchvdl_QuoteCleanup>
+    </modules>
+    <global>
+        <models>
+            <mitchvdl_quotecleanup>
+                <class>Mitchvdl_QuoteCleanup_Model</class>
+                <resourceModel>mitchvdl_quotecleanup_model_resource</resourceModel>
+            </mitchvdl_quotecleanup>
+            <mitchvdl_quotecleanup_model_resource>
+                <class>Mitchvdl_QuoteCleanup_Model_Resource</class>
+            </mitchvdl_quotecleanup_model_resource>
+        </models>
+        <helpers>
+            <mitchvdl_quotecleanup>
+                <class>Mitchvdl_QuoteCleanup_Helper</class>
+            </mitchvdl_quotecleanup>
+        </helpers>
+        <blocks>
+            <mitchvdl_quotecleanup>
+                <class>Mitchvdl_QuoteCleanup_Block</class>
+            </mitchvdl_quotecleanup>
+        </blocks>
+    </global>
+    <crontab>
+        <jobs>
+            <sales_clean_quotes>
+                <schedule>
+                    <cron_expr>0 5 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>mitchvdl_quotecleanup/observer::cleanExpiredQuotes</model>
+                </run>
+            </sales_clean_quotes>
+        </jobs>
+    </crontab>
+</config>
